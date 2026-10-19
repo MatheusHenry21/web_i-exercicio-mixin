@@ -2,11 +2,30 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Autenticação Django</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block titulo %}Área de Funcionários{% endblock %}</title>
 </head>
 <body>
-    <div class="container">
+    <header>
+        <nav>
+            <a href="{% url 'home' %}">Home</a>
+
+            {% if user.is_authenticated %}
+                <a href="{% url 'painel' %}">Painel</a>
+                <a href="{% url 'perfil' %}">Meu perfil</a>
+
+                <form method="post" action="{% url 'logout' %}">
+                    {% csrf_token %}
+                    <button type="submit">Sair</button>
+                </form>
+            {% else %}
+                <a href="{% url 'login' %}">Entrar</a>
+            {% endif %}
+        </nav>
+    </header>
+
+    <main class="container">
         {% block conteudo %}{% endblock %}
-    </div>
+    </main>
 </body>
 </html>

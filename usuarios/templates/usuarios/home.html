@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+
+{% block titulo %}Página inicial{% endblock %}
+
+{% block conteudo %}
+    <h1>Área Restrita de Funcionários</h1>
+
+    <p>Bem-vindo ao sistema da empresa.</p>
+    <p>Esta página é pública e pode ser acessada por qualquer visitante.</p>
+
+    {% if user.is_authenticated %}
+        <p>Olá, {{ user.username }}!</p>
+        <p>Você já está autenticado no sistema.</p>
+
+        <a href="{% url 'painel' %}">Acessar painel</a>
+    {% else %}
+        <p>Faça login para acessar as páginas restritas.</p>
+
+        <a href="{% url 'login' %}">Entrar no sistema</a>
+    {% endif %}
+{% endblock %}

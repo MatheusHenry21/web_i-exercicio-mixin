@@ -3,3 +3,9 @@ from django.views.generic import TemplateView
 
 class PainelView(LoginRequiredMixin, TemplateView):
     template_name = 'usuarios/painel.html'
+
+class HomeView(TemplateView):
+    template_name = 'usuarios/home.html'
+
+class PerfilView(LoginRequiredMixin, TemplateView):
+    template_name = 'usuarios/perfil.html'
