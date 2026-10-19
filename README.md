@@ -36,3 +36,6 @@ Crie seu próprio projeto Django usando:
 ## 🤝 **Dúvidas?**
 
 Caso tenha dúvidas, entre em contato pelo **Discord** ou pelo e-mail do professor. Bons estudos e divirta-se! 🐍
+
+
+Atividade realizada por Matheus Henrique - Aluno
